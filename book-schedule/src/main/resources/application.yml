@@ -1,0 +1,14 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: schedule
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+#  logback
+logging:
+  file:
+    name: logs

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/book-admin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/book-api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/book-common" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/book-service" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/book-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gateway" vcs="Git" />
   </component>
 </project>
