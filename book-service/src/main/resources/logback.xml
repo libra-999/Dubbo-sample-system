@@ -9,7 +9,7 @@
     </appender>
     
     <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>./book-schedule/logs/check.log</File>
+        <File>./book-service/logs/service.log</File>
         <encoder>
             <pattern>${log.pattern}</pattern>
             <charset>UTF-8</charset>
@@ -20,7 +20,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>./book-schedule/logs/check.log.%d.%i</fileNamePattern>
+            <fileNamePattern>./book-service/logs/service.log.%d.%i</fileNamePattern>
             <maxFileSize>10MB</maxFileSize>
             <maxHistory>7</maxHistory>
             <totalSizeCap>500MB</totalSizeCap>

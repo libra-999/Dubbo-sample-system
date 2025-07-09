@@ -1,6 +1,5 @@
 server:
   port: 7060
-
 spring:
   application:
     name: api
@@ -13,6 +12,7 @@ spring:
     open-in-view: false
   jackson:
     time-zone: UTC
+
 # service for registry
   config:
     import: optional:nacos:${spring.application.name}
@@ -24,6 +24,7 @@ spring:
         group: book
         enabled: true
         register-enabled: true
+
 # configuration dubbo with other services
 dubbo:
   application:
@@ -39,6 +40,16 @@ dubbo:
     address: nacos://127.0.0.1:8848?namespace=book-review
     timeout: 5000
   enabled: false
+
+#  api document
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+
 #  logback
 logging:
   file:

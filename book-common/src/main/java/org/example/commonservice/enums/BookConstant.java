@@ -1,5 +1,5 @@
 package org.example.commonservice.enums;
 
-public enum Book {
+public enum BookConstant {
     REVIEW , PAID, LIMITED
 }

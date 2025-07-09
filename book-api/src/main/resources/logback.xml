@@ -28,7 +28,7 @@
     </appender>
 
     <root level="info">
-        <appender-ref ref="Console" />
-        <appender-ref ref="RollingFile" />
+        <appender-ref ref="consoleLog" />
+        <appender-ref ref="fileErrorLog" />
     </root>
 </configuration>

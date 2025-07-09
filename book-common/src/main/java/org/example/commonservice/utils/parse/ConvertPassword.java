@@ -1,8 +1,8 @@
-package org.example.commonservice.utils.security;
+package org.example.commonservice.utils.parse;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-public class SecurityUtil {
+public class ConvertPassword {
 
     public static String encryptPassword(String password) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -12,7 +12,6 @@ public class SecurityUtil {
     public static boolean matchPassword(String rawPassword, String encodedPassword) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         return bCryptPasswordEncoder.matches(rawPassword,encodedPassword);
-
     }
 
 }

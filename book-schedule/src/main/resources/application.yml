@@ -8,6 +8,10 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 50MB
+#  Mybatis
+mybatis:
+  typeAliasesPackage: org.example.**.mapper
+  mapperLocations: classpath*:mybatis/**/*Mapper.xml
 #  logback
 logging:
   file:
