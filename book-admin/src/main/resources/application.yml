@@ -38,19 +38,15 @@ spring:
     password: ${spring.datasource.password}
 
   # service for registry
-  config:
-    import: optional:nacos:${spring.application.name}
   cloud:
     nacos:
       config:
-        enabled: false
-        file-extension: yaml
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: book-review
-        group: book
         enabled: true
-        register-enabled: true
+      discovery:
+        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:book-review}
+        group: ${GROUP:book}
+        enabled: true
 
 # redis tools
   data:

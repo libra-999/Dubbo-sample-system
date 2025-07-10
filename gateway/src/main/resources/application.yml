@@ -2,53 +2,60 @@ server:
   port: 1001
   netty:
     connection-timeout: 250ms
+    max-initial-line-length: 16KB
 spring:
   application:
     name: gateway
-  config:
-    import: optional:nacos:${spring.application.name}
   cloud:
     nacos:
       config:
-        server-addr: ${NACOS_HOST:http://127.0.0.1:8848}
+        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
         namespace: ${NACOS_NAMESPACE:book-review}
-        group: book
-        file-extension: yaml
-        refresh-enabled: true
-        enabled: false
+        prefix: ${spring.application.name}
+        group: ${GROUP:book}
+        enabled: true
       discovery:
         enabled: true
     gateway:
       discovery:
         locator:
-          enabled: false
+          enabled: true
+          lower-case-service-id: true
       routes:
         - id: admin
-          uri: lb://admin
-          predicates:
-            - Path=/admin/api/**
-        - id: api
           uri: lb://api
           predicates:
-            - Path=/api/**
-        - id: service
-          uri: lb://service
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1
+        - id: front
+          uri: lb://api
           predicates:
-            - Path=/service/**
-        - id: task-check
-          uri: lb://schedule
+            - Path=/front/**
+          filters:
+            - StripPrefix=1
+            - ForwardHeaders=Authorization
+        - id: auth
+          uri: lb://api
           predicates:
-            - Path=/schedule/**
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
       globalcors:
         cors-configurations:
           '[/**]':
             allowed-origins: "*"
+            allowed-headers: "*"
+            allow-credentials: true
             allowed-methods:
               - GET
               - PUT
               - DELETE
               - PATCH
               - POST
-            allowed-headers: "*"
-            allow-credentials: true
-
+      default-filters:
+        - RemoveRequestHeader=Host
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+    reactor.netty.http.client: DEBUG

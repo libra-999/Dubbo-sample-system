@@ -59,28 +59,28 @@ public class RestControllerAdviceExceptionHandler {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
     }
 
-    @ExceptionHandler(MissingServletRequestParameterException.class)
-    public ResponseEntity<HttpBodyResponse<Object>> handleMissingServletRequestParameterException(
-        MissingServletRequestParameterException ex) {
-
-        Map<String, String> validationErrors = new HashMap<>();
-        validationErrors.put(ex.getParameterName(), ex.getMessage());
-
-        HttpBodyErrorResponse httpBodyErrorResponse = createHttpBodyErrorResponse(
-            ex,
-            ErrorConstant.VALIDATION_ERROR,
-            List.of(ErrorConstant.VALIDATION_ERROR.getMessage()),
-            validationErrors
-        );
-
-        HttpBodyResponse<Object> response = HttpBodyResponse.builder()
-            .status(HttpStatus.BAD_REQUEST.value())
-            .message("Missing request parameter")
-            .error(httpBodyErrorResponse)
-            .build();
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-    }
+//    @ExceptionHandler(MissingServletRequestParameterException.class)
+//    public ResponseEntity<HttpBodyResponse<Object>> handleMissingServletRequestParameterException(
+//        MissingServletRequestParameterException ex) {
+//
+//        Map<String, String> validationErrors = new HashMap<>();
+//        validationErrors.put(ex.getParameterName(), ex.getMessage());
+//
+//        HttpBodyErrorResponse httpBodyErrorResponse = createHttpBodyErrorResponse(
+//            ex,
+//            ErrorConstant.VALIDATION_ERROR,
+//            List.of(ErrorConstant.VALIDATION_ERROR.getMessage()),
+//            validationErrors
+//        );
+//
+//        HttpBodyResponse<Object> response = HttpBodyResponse.builder()
+//            .status(HttpStatus.BAD_REQUEST.value())
+//            .message("Missing request parameter")
+//            .error(httpBodyErrorResponse)
+//            .build();
+//
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+//    }
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(AuthenticationException.class)

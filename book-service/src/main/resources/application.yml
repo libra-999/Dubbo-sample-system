@@ -31,16 +31,15 @@ spring:
     time-zone: UTC
 
   # service for registry
-  config:
-    import: optional:nacos:${spring.application.name}
   cloud:
     nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: book-review
-        group: book
+      config:
         enabled: true
-        register-enabled: true
+      discovery:
+        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:book-review}
+        group: ${GROUP:book}
+        enabled: true
 
   # redis tools
   data:

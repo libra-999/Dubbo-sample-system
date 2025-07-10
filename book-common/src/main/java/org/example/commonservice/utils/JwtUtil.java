@@ -1,26 +1,26 @@
-package org.example.bookservice.security;
+package org.example.commonservice.utils;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Component
-public class Util {
+public class JwtUtil {
 
     private final static SecretKey jwtSecret = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final static int jwtExpirationMs = 86400000;
 
-    public String generateJwtToken(Authentication authentication) {
-
-        UserDetail userPrincipal = (UserDetail) authentication.getPrincipal();
+    public String generateJwtToken(String username, List<String> roles) {
         return Jwts.builder()
-            .setSubject((userPrincipal.getUsername()))
+            .setSubject(username)
+            .claim("roles", roles)
             .setIssuedAt(new Date())
             .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs)) // 1 day lifetime
             .signWith(jwtSecret)
@@ -35,7 +35,7 @@ public class Util {
 
     public boolean validateJwtToken(String authToken) {
         try {
-            Jwts.parserBuilder().setSigningKey(jwtSecret).build().parse(authToken);
+            Jwts.parserBuilder().setSigningKey(jwtSecret).build().parseClaimsJws(authToken);
             return true;
         } catch (MalformedJwtException e) {
             log.error("Invalid JWT token: {}", e.getMessage());
@@ -48,6 +48,18 @@ public class Util {
         }
 
         return false;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<String> extractRoles(String token) {
+        Claims claims = Jwts.parserBuilder()
+            .setSigningKey(jwtSecret)
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
+
+        List<String> roles = claims.get("roles", List.class);
+        return roles != null ? roles : Collections.emptyList();
     }
 
 }

@@ -1,29 +1,37 @@
 server:
   port: 7060
+  forward-headers-strategy: framework
 spring:
   application:
     name: api
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 50MB
-  jpa:
-    show-sql: false
-    open-in-view: false
-  jackson:
-    time-zone: UTC
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:book-review}?&useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:nacos123}
+    hikari:
+      connectionTimeout: 60000
+      initializationFailTimeout: 3000
+      connectionTestQuery: SELECT 1
+      validationTimeout: 60000
+      maxLifetime: 35000
+      maximumPoolSize: 50
+      minimumIdle: 10
+      idleTimeout: 30000
+      registerMbeans: false
+      poolName: bookReview
+      isolate-internal-queries: true
 
 # service for registry
-  config:
-    import: optional:nacos:${spring.application.name}
   cloud:
     nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: book-review
-        group: book
+      config:
         enabled: true
-        register-enabled: true
+      discovery:
+        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:book-review}
+        group: ${GROUP:book}
+        enabled: true
 
 # configuration dubbo with other services
 dubbo:
@@ -47,8 +55,8 @@ springdoc:
     path: /v3/api-docs
   swagger-ui:
     enabled: true
-    path: /swagger-ui.html
-    tags-sorter: alpha
+    path: /documents
+    default-models-expand-depth: -1
 
 #  logback
 logging:
