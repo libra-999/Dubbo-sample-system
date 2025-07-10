@@ -1,0 +1,54 @@
+server:
+  port: 1001
+  netty:
+    connection-timeout: 250ms
+spring:
+  application:
+    name: gateway
+  config:
+    import: optional:nacos:${spring.application.name}
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_HOST:http://127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:book-review}
+        group: book
+        file-extension: yaml
+        refresh-enabled: true
+        enabled: false
+      discovery:
+        enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: admin
+          uri: lb://admin
+          predicates:
+            - Path=/admin/api/**
+        - id: api
+          uri: lb://api
+          predicates:
+            - Path=/api/**
+        - id: service
+          uri: lb://service
+          predicates:
+            - Path=/service/**
+        - id: task-check
+          uri: lb://schedule
+          predicates:
+            - Path=/schedule/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods:
+              - GET
+              - PUT
+              - DELETE
+              - PATCH
+              - POST
+            allowed-headers: "*"
+            allow-credentials: true
+
