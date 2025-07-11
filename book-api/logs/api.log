@@ -1,4 +1,4 @@
-2025-07-10 09:38:28 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+2025-07-11 10:21:05 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
 
 ***************************
 APPLICATION FAILED TO START
@@ -6,18 +6,14 @@ APPLICATION FAILED TO START
 
 Description:
 
-Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
-
-Reason: Failed to determine a suitable driver class
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
 
 
 Action:
 
-Consider the following:
-	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
-	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
 [0;39m 
-2025-07-10 14:05:13 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+2025-07-11 10:25:35 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
 
 ***************************
 APPLICATION FAILED TO START
@@ -25,13 +21,15 @@ APPLICATION FAILED TO START
 
 Description:
 
-The bean 'conversionServicePostProcessor', defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/security/config/annotation/web/reactive/WebFluxSecurityConfiguration.class] and overriding is disabled.
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
 
 Action:
 
-Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
 [0;39m 
-2025-07-10 16:22:14 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+2025-07-11 10:32:53 [1;31mERROR[0;39m [36m[ngframework.boot.web.embedded.tomcat.TomcatStarter 60][0;39m : [1;33mError starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [/Users/libra/Documents/Demo/dubbo-act/book-api/target/classes/org/example/apiservice/core/JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.example.commonservice.utils.JwtUtil' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}[0;39m 
+2025-07-11 10:32:53 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
 
 ***************************
 APPLICATION FAILED TO START
@@ -39,11 +37,666 @@ APPLICATION FAILED TO START
 
 Description:
 
-No spring.config.import property has been defined
+Parameter 0 of constructor in org.example.apiservice.core.JwtAuthenticationFilter required a bean of type 'org.example.commonservice.utils.JwtUtil' that could not be found.
+
 
 Action:
 
-Add a spring.config.import=nacos: property to your configuration.
-	If configuration is not required add spring.config.import=optional:nacos: instead.
-	To disable this check, set spring.cloud.nacos.config.import-check.enabled=false.
+Consider defining a bean of type 'org.example.commonservice.utils.JwtUtil' in your configuration.
 [0;39m 
+2025-07-11 10:38:17 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:39:13 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:41:11 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:48:10 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:53:03 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:53:17 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 10:54:11 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:00:36 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authProvider in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+	- @org.apache.dubbo.config.annotation.DubboReference(cluster="", listener={}, callbacks=-1, onconnect="", providerPort=-1, protocol="", stub="", id="", tag="", validation="", connections=-1, group="", providerNamespace="", providedBy={}, init=true, cache="", module="", injvm=true, check=true, stubevent=false, version="", sent=false, proxy="", retries=-1, interfaceClass=void.class, sticky=false, mock="", parameters={}, methods={}, lazy=false, loadbalance="", layer="", timeout=-1, referAsync=false, reconnect="", ondisconnect="", scope="", client="", interfaceName="", consumer="", owner="", registry={}, monitor="", services={}, actives=-1, url="", generic=false, unloadClusterRelated=false, filter={}, async=false, application="", merger="")
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:02:33 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:12:53 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:13:17 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:15:03 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:15:45 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:16:42 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:18:37 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:21:00 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:24:27 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:26:00 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:26:48 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:27:31 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:27:50 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:30:00 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:31:40 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:32:00 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:33:02 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:34:15 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:34:25 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:35:29 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:35:43 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:37:05 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.bookadmin.provider.AuthProvider' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.bookadmin.provider.AuthProvider' in your configuration.
+[0;39m 
+2025-07-11 11:43:51 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:45:20 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:55:14 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 11:57:33 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 13:49:45 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 13:50:15 [1;31mERROR[0;39m [36m[rk.boot.diagnostics.LoggingFailureAnalysisReporter 40][0;39m : [1;33m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in org.example.apiservice.controller.auth.AuthController required a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.example.apiservice.mapper.AuthControllerMapper' in your configuration.
+[0;39m 
+2025-07-11 15:18:12 [1;31mERROR[0;39m [36m[org.apache.dubbo.common.logger.log4j2.Log4j2Logger 111][0;39m : [1;33m [DUBBO] Failed to create nacos config service client. Reason: server status check failed., dubbo version: 3.3.4, current host: 192.168.13.96, error code: 5-34. This may be caused by , go to https://dubbo.apache.org/faq/5/34 to find instructions. [0;39m 
+2025-07-11 15:18:54 [1;31mERROR[0;39m [36m[org.apache.dubbo.common.logger.log4j2.Log4j2Logger 111][0;39m : [1;33m [DUBBO] Failed to create nacos config service client. Reason: server status check failed., dubbo version: 3.3.4, current host: 192.168.13.96, error code: 5-34. This may be caused by , go to https://dubbo.apache.org/faq/5/34 to find instructions. [0;39m 
+2025-07-11 15:19:42 [1;31mERROR[0;39m [36m[org.apache.dubbo.common.logger.log4j2.Log4j2Logger 111][0;39m : [1;33m [DUBBO] Failed to create nacos config service client. Reason: server status check failed., dubbo version: 3.3.4, current host: 192.168.13.96, error code: 5-34. This may be caused by , go to https://dubbo.apache.org/faq/5/34 to find instructions. [0;39m 
+2025-07-11 15:19:42 [1;31mERROR[0;39m [36m[org.springframework.boot.SpringApplication         859][0;39m : [1;33mApplication run failed[0;39m 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Failed to create nacos config service client. Reason: server status check failed.
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.prepareEnvironment(DefaultApplicationDeployer.java:904)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.startConfigCenter(DefaultApplicationDeployer.java:306)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.initialize(DefaultApplicationDeployer.java:224)
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.prepare(DefaultModuleDeployer.java:665)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.initDubboConfigBeans(DubboConfigApplicationListener.java:85)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.init(DubboConfigApplicationListener.java:68)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.onApplicationEvent(DubboConfigApplicationListener.java:59)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.onApplicationEvent(DubboConfigApplicationListener.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.context.support.AbstractApplicationContext.registerListeners(AbstractApplicationContext.java:925)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.example.apiservice.ApiServiceApplication.main(ApiServiceApplication.java:11)
+Caused by: java.lang.IllegalStateException: Failed to create nacos config service client. Reason: server status check failed.
+	at org.apache.dubbo.configcenter.support.nacos.NacosDynamicConfiguration.buildConfigService(NacosDynamicConfiguration.java:147)
+	at org.apache.dubbo.configcenter.support.nacos.NacosDynamicConfiguration.<init>(NacosDynamicConfiguration.java:97)
+	at org.apache.dubbo.configcenter.support.nacos.NacosDynamicConfigurationFactory.createDynamicConfiguration(NacosDynamicConfigurationFactory.java:45)
+	at org.apache.dubbo.common.config.configcenter.AbstractDynamicConfigurationFactory.lambda$getDynamicConfiguration$0(AbstractDynamicConfigurationFactory.java:39)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.dubbo.common.utils.ConcurrentHashMapUtils.computeIfAbsent(ConcurrentHashMapUtils.java:56)
+	at org.apache.dubbo.common.config.configcenter.AbstractDynamicConfigurationFactory.getDynamicConfiguration(AbstractDynamicConfigurationFactory.java:39)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.getDynamicConfiguration(DefaultApplicationDeployer.java:980)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.prepareEnvironment(DefaultApplicationDeployer.java:892)
+	... 20 common frames omitted
+2025-07-11 15:33:55 [1;31mERROR[0;39m [36m[.alibaba.cloud.nacos.registry.NacosServiceRegistry 81][0;39m : [1;33mnacos registry, api register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='null', username='******', password='******', endpoint='null', namespace='null', watchDelay=30000, logName='null', service='null', weight=1.0, clusterName='null', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={}, registerEnabled=true, ip='null', networkInterface='', port=-1, secure=false, accessKey='null', secretKey='null', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},[0;39m 
+com.alibaba.nacos.api.exception.NacosException: user not found!
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:449)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.doRegisterService(NamingGrpcClientProxy.java:250)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.registerServiceForEphemeral(NamingGrpcClientProxy.java:145)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.registerService(NamingGrpcClientProxy.java:136)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.registerService(NamingClientProxyDelegate.java:95)
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:158)
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:75)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:264)
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:156)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:119)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:49)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:451)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:384)
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:47)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.example.apiservice.ApiServiceApplication.main(ApiServiceApplication.java:11)
+2025-07-11 15:33:55 [1;31mERROR[0;39m [36m[org.springframework.boot.SpringApplication         859][0;39m : [1;33mApplication run failed[0;39m 
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:291)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.example.apiservice.ApiServiceApplication.main(ApiServiceApplication.java:11)
+Caused by: java.lang.reflect.UndeclaredThrowableException: null
+	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:83)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.register(AbstractAutoServiceRegistration.java:264)
+	at com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration.register(NacosAutoServiceRegistration.java:78)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.start(AbstractAutoServiceRegistration.java:156)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:119)
+	at org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration.onApplicationEvent(AbstractAutoServiceRegistration.java:49)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:451)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:384)
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:47)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	... 13 common frames omitted
+Caused by: com.alibaba.nacos.api.exception.NacosException: user not found!
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:449)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.doRegisterService(NamingGrpcClientProxy.java:250)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.registerServiceForEphemeral(NamingGrpcClientProxy.java:145)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.registerService(NamingGrpcClientProxy.java:136)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.registerService(NamingClientProxyDelegate.java:95)
+	at com.alibaba.nacos.client.naming.NacosNamingService.registerInstance(NacosNamingService.java:158)
+	at com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:75)
+	... 25 common frames omitted

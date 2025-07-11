@@ -18,7 +18,6 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityWebFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
-            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .authorizeHttpRequests(auth ->
                 auth
                     .requestMatchers("/admin/v1.0.0/api/**").hasAnyRole("ADMIN", "MANAGER", "MONITOR", "STAFF")
@@ -29,7 +28,9 @@ public class SecurityConfig {
                         "/webjars/**").permitAll()
                     .anyRequest().denyAll()
 
-            ).sessionManagement(session ->
+            )
+            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+            .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
     }
 }

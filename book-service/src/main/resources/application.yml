@@ -36,10 +36,12 @@ spring:
       config:
         enabled: true
       discovery:
-        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
-        namespace: ${NACOS_NAMESPACE:book-review}
-        group: ${GROUP:book}
-        enabled: true
+        server-addr: ${NACOS_SERVER:127.0.0.1:8848}
+        namespace: public
+        group: DEFAULT_GROUP
+        password: nacos
+        username: nacos
+        register-enabled: true
 
   # redis tools
   data:
@@ -62,14 +64,26 @@ dubbo:
     qos-enable: false
   protocol:
     name: dubbo
-    port: -1
+    port: 20883
   registry:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
+    username: nacos
+    password: nacos
   metadata-report:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
-  enabled: false
+    username: nacos
+    password: nacos
+  provider:
+    filter: remoteServiceException,-exception
+    version: 1.0.0
+  scan:
+    base-packages:  org.example.bookservice.provider
+  consumer:
+    version: 1.0.0
+    check: false
+    timeout: 10000
 #  Mybatis
 mybatis:
   typeAliasesPackage: org.example.**.core.entity

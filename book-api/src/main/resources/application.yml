@@ -21,34 +21,46 @@ spring:
       registerMbeans: false
       poolName: bookReview
       isolate-internal-queries: true
-
 # service for registry
   cloud:
     nacos:
       config:
         enabled: true
       discovery:
-        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
-        namespace: ${NACOS_NAMESPACE:book-review}
-        group: ${GROUP:book}
-        enabled: true
-
+        server-addr: ${NACOS_SERVER:127.0.0.1:8848}
+        namespace: public
+        group: DEFAULT_GROUP
+        register-enabled: true
+        username: nacos
+        password: nacos
 # configuration dubbo with other services
 dubbo:
   application:
     name: ${spring.application.name}
     qos-enable: false
+    serialize-check-status: WARN
   protocol:
     name: dubbo
-    port: -1
+    port: 20881
   registry:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
+    username: nacos
+    password: nacos
   metadata-report:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
-  enabled: false
-
+    username: nacos
+    password: nacos
+  provider:
+    filter: remoteServiceExceptionFilter,-exception
+    version: 1.0.0
+  consumer:
+    check: false
+    version: 1.0.0
+    timeout: 10000
+  scan:
+    base-packages: org.example.apiservice.controller
 #  api document
 springdoc:
   api-docs:
@@ -57,7 +69,6 @@ springdoc:
     enabled: true
     path: /documents
     default-models-expand-depth: -1
-
 #  logback
 logging:
   file:

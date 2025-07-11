@@ -29,26 +29,25 @@ spring:
     open-in-view: false
   jackson:
     time-zone: UTC
-
 # flyway
   flyway:
     baseline-on-migrate: true
     url: ${spring.datasource.url}
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
-
-  # service for registry
+# service for registry
   cloud:
     nacos:
       config:
         enabled: true
       discovery:
-        server-addr: ${NACOS_SERVER:http://127.0.0.1:8848}
-        namespace: ${NACOS_NAMESPACE:book-review}
-        group: ${GROUP:book}
-        enabled: true
-
-# redis tools
+        server-addr: ${NACOS_SERVER:127.0.0.1:8848}
+        username: nacos
+        password: nacos
+        register-enabled: true
+        group: DEFAULT_GROUP
+        namespace: public
+  # redis tools
   data:
     redis:
       port: 6379
@@ -69,19 +68,33 @@ dubbo:
     qos-enable: false
   protocol:
     name: dubbo
-    port: -1
+    port: 20880
   registry:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
+    username: nacos
+    password: nacos
   metadata-report:
-    address: nacos://127.0.0.1:8848?namespace=book-review
+    address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
-  enabled: false
+    username: nacos
+    password: nacos
+  provider:
+    filter: remoteServiceException,-exception
+    version: 1.0.0
+  scan:
+    base-packages:  org.example.bookadmin.provider
+  consumer:
+    version: 1.0.0
+    check: false
+    timeout: 10000
 
 #  Mybatis
 mybatis:
-  typeAliasesPackage: org.example.**.mapper
+  typeAliasesPackage: org.example.**.core.entity
   mapperLocations: classpath*:mybatis/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
 
 #  logback
 logging:
