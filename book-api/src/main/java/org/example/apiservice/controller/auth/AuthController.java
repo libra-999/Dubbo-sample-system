@@ -1,5 +1,6 @@
 package org.example.apiservice.controller.auth;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -19,22 +20,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.example.commonservice.utils.response.ControllerHandler.responseCreated;
-import static org.example.commonservice.utils.response.ControllerHandler.responseSucceed;
+import static org.example.commonservice.utils.response.ControllerHandler.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/admin/v1.0.0/api")
 public class AuthController {
 
-    @DubboReference
+    @DubboReference(version = "1.0.0")
     private final AuthProvider authProvider;
     private final AuthControllerMapper mapper;
 
     @Operation(summary = "login")
     @PostMapping("/login")
-    public ResponseEntity<HttpBodyResponse<AuthResponse>> login(@RequestBody @Validated Login request) {
-        return responseSucceed(mapper.from(authProvider.login(request)));
+    public ResponseEntity<HttpBodyResponse<AuthResponse>> login(@RequestBody @Validated Login request) throws JsonProcessingException {
+
+        Map<String, String> map = authProvider.login(request);
+        AuthResponse authResponse = AuthResponse.of(map.get("token"),fromJsonString(map.get("user"), UserResponse.class));
+        return responseSucceed(authResponse);
     }
 
     @Operation(summary = "register")

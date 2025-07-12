@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .pathMatchers("/admin/v1.0.0/api/**").hasAnyRole("ADMIN", "MANAGER", "MONITOR", "STAFF")
                 .pathMatchers("/front/v1.0.0/api/**").authenticated()
                 .pathMatchers("/auth/v1.0.0/api/**",
-                    "/documents", "/swagger-ui.html",
+                    "/documents", "/swagger-ui.html","/actuator/**",
                     "/swagger-ui/**", "/v3/api-docs/**", "/webjars/**").permitAll()
                 .anyExchange().authenticated()
             )

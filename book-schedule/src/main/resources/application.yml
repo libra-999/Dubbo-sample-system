@@ -26,16 +26,21 @@ dubbo:
     username: nacos
     password: nacos
   provider:
-    filter: remoteServiceException,-exception
+    filter: -exception
     version: 1.0.0
+  scan:
+    base-packages: org.example.webservice.provider, org.example.webservice.service
   consumer:
     version: 1.0.0
     check: false
     timeout: 10000
 #  Mybatis
 mybatis:
-  typeAliasesPackage: org.example.**.mapper
-  mapperLocations: classpath*:mybatis/**/*Mapper.xml
+  typeAliasesPackage: org.example.commonservice.core.entity
+  mapperLocations: classpath*:mybatis/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
 #  logback
 logging:
   file:

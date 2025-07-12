@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.server.resource.InvalidBearerTokenExc
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -37,7 +36,7 @@ public class RestControllerAdviceExceptionHandler {
 
         HttpBodyResponse<Object> response =
             HttpBodyResponse.builder()
-                .status(httpException.getHttpStatus().value())
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .message(messageError)
                 .error(httpBodyErrorResponse)
                 .build();

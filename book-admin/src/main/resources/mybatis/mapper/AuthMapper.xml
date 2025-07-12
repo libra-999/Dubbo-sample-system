@@ -10,7 +10,7 @@
         <result property="password" column="password"/>
         <result property="dateOfBirth" column="date_of_birth"/>
         <result property="phoneNumber" column="phone"/>
-        <result property="roleId" column="role"/>
+        <result property="roleId" column="role_id"/>
         <result property="thumbnail" column="thumbnail"/>
         <result property="createdAt" column="created_at"/>
         <result property="updatedAt" column="updated_at"/>
@@ -20,7 +20,8 @@
         <result property="deletedBy" column="deleted_by"/>
     </resultMap>
     <sql id="selectUserInfo">
-        select username,
+        select id,
+               username,
                email,
                password,
                gender,
@@ -38,34 +39,35 @@
         from users u
     </sql>
 <!--  Find username of users  -->
-    <select id="findByUsername" resultType="org.example.commonservice.core.entity.UserEntity" parameterType="string">
+    <select id="findByUsername" resultMap="UserResult" parameterType="string">
         <include refid="selectUserInfo"/>
-        where u.username = #{username} and delete_at is null
+        where u.username = #{username} and deleted_at is null
     </select>
 <!--  Find email of users  -->
     <select id="findByEmail" parameterType="string"
-            resultType="org.example.commonservice.core.entity.UserEntity">
+            resultMap="UserResult">
         <include refid="selectUserInfo"/>
-        where u.email = #{email} and delete_at is null
+        where u.email = #{email} and u.deleted_at is null
     </select>
 
 
-    <select id="save" resultMap="UserResult">
+    <insert id="save" parameterType="org.example.commonservice.core.entity.UserEntity"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into users(username, email, password, gender, phone, date_of_birth, role_id, status, created_at,
-                          updated_at, deleted_at, created_by, updated_by, deleted_by, thumbnail) value (
+                          updated_at, deleted_at, created_by, updated_by, deleted_by, thumbnail) values (
                                                                                              #{username}, #{email},
                                                                                              #{password}, #{gender},
                                                                                              #{phoneNumber},
-                                                                                             #{dataOfBirth}, #{roleId},
+                                                                                             #{dateOfBirth}, #{roleId},
                                                                                              #{status}, #{createdAt},
                                                                                              #{updatedAt}, #{deletedAt},
                                                                                              #{createdBy}, #{updatedBy},
                                                                                              #{deletedBy}, #{thumbnail}
             );
-    </select>
+    </insert>
 
-    <select id="findById" resultMap="UserResult">
+    <select id="findById" resultMap="UserResult" parameterType="int">
         <include refid="selectUserInfo"/>
-        where id = #{id} and delete_at is null
+        where id = #{id} and deleted_at is null
     </select>
 </mapper>

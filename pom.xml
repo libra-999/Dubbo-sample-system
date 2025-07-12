@@ -27,7 +27,7 @@
         <java.version>17</java.version>
         <dubbo.version>3.3.4</dubbo.version>
         <nacos.version>3.3.4</nacos.version>
-        <mybatis.version>3.0.1</mybatis.version>
+        <mybatis.version>3.0.3</mybatis.version>
         <mysql.verions>8.2.0</mysql.verions>
     </properties>
     <dependencies>
@@ -43,6 +43,11 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-autoconfigure</artifactId>
+                <version>3.3.4</version>
             </dependency>
             <!-- Nacos Starter -->
             <dependency>

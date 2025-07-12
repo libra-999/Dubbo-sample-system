@@ -29,19 +29,19 @@ spring:
           lower-case-service-id: true
       routes:
         - id: admin
-          uri: lb://api
+          uri: http://localhost:7060
           predicates:
             - Path=/admin/**
           filters:
             - StripPrefix=1
         - id: front
-          uri: lb://api
+          uri: http://localhost:7060
           predicates:
             - Path=/front/**
           filters:
             - StripPrefix=1
         - id: auth
-          uri: lb://api
+          uri: http://localhost:7060
           predicates:
             - Path=/auth/**
           filters:
@@ -85,7 +85,10 @@ dubbo:
     version: 1.0.0
     check: false
     timeout: 10000
+management:
+  endpoint:
+    gateway:
+      enabled: true
 logging:
   level:
     org.springframework.cloud.gateway: INFO
-    reactor.netty.http.client: DEBUG

@@ -36,7 +36,7 @@ spring:
 # configuration dubbo with other services
 dubbo:
   application:
-    name: ${spring.application.name}
+    name: api
     qos-enable: false
     serialize-check-status: WARN
   protocol:
@@ -55,13 +55,12 @@ dubbo:
   provider:
     filter: remoteServiceExceptionFilter,-exception
     version: 1.0.0
+    register: false
   consumer:
-    check: false
     version: 1.0.0
     timeout: 10000
-  scan:
-    base-packages: org.example.apiservice.controller
-#  api document
+    check: true
+
 springdoc:
   api-docs:
     path: /v3/api-docs
@@ -69,7 +68,7 @@ springdoc:
     enabled: true
     path: /documents
     default-models-expand-depth: -1
-#  logback
+# logback
 logging:
   file:
     name: logs

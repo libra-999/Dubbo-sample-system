@@ -44,10 +44,10 @@ spring:
         server-addr: ${NACOS_SERVER:127.0.0.1:8848}
         username: nacos
         password: nacos
-        register-enabled: true
         group: DEFAULT_GROUP
         namespace: public
-  # redis tools
+        enabled: true
+# redis tools
   data:
     redis:
       port: 6379
@@ -64,11 +64,11 @@ spring:
 # configuration dubbo with other services
 dubbo:
   application:
-    name: ${spring.application.name}
+    name: admin-service
     qos-enable: false
   protocol:
     name: dubbo
-    port: 20880
+    port: 20950
   registry:
     address: nacos://127.0.0.1:8848?namespace=public
     timeout: 5000
@@ -80,32 +80,27 @@ dubbo:
     username: nacos
     password: nacos
   provider:
-    filter: remoteServiceException,-exception
+    filter: -exception
     version: 1.0.0
   scan:
-    base-packages:  org.example.bookadmin.provider
+    base-packages: org.example.bookadmin.provider, org.example.bookadmin.service
   consumer:
     version: 1.0.0
-    check: false
     timeout: 10000
+    check: false
 
 #  Mybatis
 mybatis:
-  typeAliasesPackage: org.example.**.core.entity
-  mapperLocations: classpath*:mybatis/**/*Mapper.xml
+  typeAliasesPackage: org.example.commonservice.core.entity
+  mapperLocations: classpath*:mybatis/mapper/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
+    cache-enabled: false
 
 #  logback
 logging:
   file:
     name: logs
-  level:
-    org:
-      springframework:
-        data:
-          redis:
-            core:
-              RedisTemplate: INFO
+
 
 

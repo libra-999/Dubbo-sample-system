@@ -36,6 +36,12 @@ public class JwtAuthFilter implements WebFilter {
             return writeJsonResponse(exchange.getResponse(), HttpStatus.UNAUTHORIZED, "Unauthorized");
         }
 
+        String paths = exchange.getRequest().getURI().getPath();
+        if (paths.startsWith("/actuator/**")) {
+            return chain.filter(exchange);
+        }
+
+
         String username = jwtUtil.getUserNameFromJwtToken(token);
         List<String> roles = jwtUtil.extractRoles(token);
         Authentication auth = new UsernamePasswordAuthenticationToken(
